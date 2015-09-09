@@ -9,7 +9,7 @@ writing clear, well readable, self-explained, efficient JavaScript code. The ide
 - use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained
 
 SHORTHAND | FULL
------------------
+----------|-------
 str       | string
 pts       | points
 ret       | return
