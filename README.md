@@ -6,11 +6,16 @@ There are many perfect guides and tutorials how to write clear and understandabl
 So I think that it's not necessary and even a bad idea to compose something in this sphere. Instead of reinventing the wheel I want to formulate some common principles and approaches for 
 writing clear, well readable, self-explained, efficient JavaScript code. The ideas expressed here can use for creating own detailed style guides inside developer teams.
 
-- use well known acronyms to make naming of auxiliary identifiers in your code (e.g. default parameters in loop methods) more consistent and self-explained
+- use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained
+
 str => string
 pts => points
 ret => return
+res => result
 idx => index
+pos => position
+ctx => context
+fn, func => function
 
 ## Versions
 
