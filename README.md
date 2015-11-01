@@ -1,6 +1,6 @@
 # zTone
 
-JavaScript Code Principles and Style Guide
+*JavaScript Code Principles and Style Guide*
 
 There are many perfect guides and tutorials how to write clear and well understandable code. Also our world has such outstanding tools to control clearness of JavaScript code as JSLint. Instead of reinventing the wheel I want to formulate some common principles and approaches for writing clear, well readable, self-explained, efficient JavaScript code, certainly, from my point of view. The ideas expressed here can use for creating own detailed style guides and conventions inside developer teams. So...
 
@@ -11,7 +11,7 @@ SHORTHAND |FULL
 ch, char  |character
 ctx       |context
 el, elem  |element
-evt(*)    |event
+evt*****  |event
 ex        |exception
 expr      |expression
 fn, func  |function
