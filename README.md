@@ -11,7 +11,7 @@ SHORTHAND |FULL
 ch, char  |character
 ctx       |context
 el, elem  |element
-evt** * **|event
+evt*      |event
 ex        |exception
 expr      |expression
 fn, func  |function
