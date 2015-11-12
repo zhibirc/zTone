@@ -22,8 +22,11 @@ pos       |position
 res       |result
 ret       |return
 str       |string
+xhr       |XMLHttpRequest
 
 * **evt** because **e** or **event** are not appropriate for this purpose. **e** could mean the mathematical constant and, generally, is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
+
+- Use ECMAScript 5.1 methods (`forEach`, `map`, `reduce`, `reduceRight`, `filter`, `some`, `every`) for array loops instead traditional for/while/do-while.
 
 ## Various style guides and code conventions
 
