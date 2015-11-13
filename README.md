@@ -7,14 +7,12 @@ There are many perfect guides and tutorials how to write clear and well understa
 
 - Use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained. I've collected a list (look at it below) of the most common and frequent cases which may appear in a code. They have optimal balance between brevity and intelligibility. You shouldn't go to extremes and use one-letter or even one-symbol identifiers like "_", "$" (despite their validity) except counters in loops like "i", "j", "k" etc.
 
-SHORTHAND |FULL          |NOTES
-----------|--------------|-----
+SHORTHAND |FULL          |
+----------|--------------|
 ch, char  |character     |
 ctx       |context       |
 el, elem  |element       |
-evt       |event         |**evt** because **e** or **event** are not appropriate for this purpose. **e** could mean the mathematical constant and, generally,
-                          is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of
-                          the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
+evt`*`    |event         |
 ex        |exception     |
 expr      |expression    |
 fn, func  |function      |
@@ -26,7 +24,9 @@ res       |result        |
 ret       |return        |
 str       |string        |
 xhr       |XMLHttpRequest|
-
+`*` **evt** because **e** or **event** are not appropriate for this purpose. **e** could mean the mathematical constant and, generally,
+    is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of
+    the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
 
 - Use ECMAScript 5.1 methods (`forEach`, `map`, `reduce`, `reduceRight`, `filter`, `some`, `every`) for array loops instead traditional `for`/`while`/`do-while` when it is possible. There are several reasons to do so:
 	- *Chaining*. You can construct chains of methods if you need depending on result they return. Sometimes it's very useful.
