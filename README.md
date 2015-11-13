@@ -13,8 +13,8 @@ ch, char  |character     |
 ctx       |context       |
 el, elem  |element       |
 evt       |event         |**evt** because **e** or **event** are not appropriate for this purpose. **e** could mean the mathematical constant and, generally,
-          |              |is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of
-          |              |the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
+                          is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of
+                          the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
 ex        |exception     |
 expr      |expression    |
 fn, func  |function      |
