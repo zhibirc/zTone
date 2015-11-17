@@ -8,7 +8,7 @@ There are many perfect guides and tutorials how to write clear and well understa
 
 ### Identifiers
 
-- Use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained. I've collected a list (look at it below) of the most common and frequent cases which may appear in a code. They have optimal balance between brevity and intelligibility. You shouldn't go to extremes and use one-letter or even one-symbol identifiers like "_", "$" (despite their validity) except counters in loops like "i", "j", "k" etc.
+- Use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained. I've collected a list (look at it below) of the most common and frequent cases which may appear in a code. They have optimal balance between brevity and intelligibility. You shouldn't go to extremes and use one-letter or even one-symbol identifiers like `_`, `$` (despite their validity) except counters in loops like `i`, `j`, `k` etc.
 
 SHORTHAND |FULL          |
 ----------|--------------|
@@ -31,8 +31,8 @@ xhr       |XMLHttpRequest|
    is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of
    the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
 - Variables which are designed to be private but not realize real privacy might be prepended with an underbar (`_`). But I think much more better is implement real private access members with closures and indicate this fact with `_` as prefix.
-- Use **is**/**has**/**can**/**should**/**compute**/**init**/**find**/**count**/**num** and so on as parts (usually, prefixes) of variable/property names, depending on their meaning.
-- Avoid magic numbers in code, it's the common rule. There are some rare cases which are determined by concrete context when it can be suitable, but, in general, it's a bad practice.
+- Use `is`, `has`, `can`, `should`, `compute`, `init`, `get`, `find`, `count`, `num` and so on as parts (usually, prefixes) of variable/property names, depending on their meaning.
+- Avoid magic numbers in code, it's the common rule. There are some rare cases which are determined by concrete context when it can be suitable, but, in general, it's considered as a bad practice.
 
 
 ### Loops and array iterations
@@ -49,7 +49,8 @@ For details see [MDN: Array iteration methods](https://developer.mozilla.org/en-
 
 ### Comments and documentation
 
-Use JSDoc syntax for consistency of comments.
+- Tricky code should not be commented but rewritten! (“Code Complete”, Steven C. McConnell — Microsoft Press)
+- Use JSDoc syntax for consistency of comments.
 
 
 ## Various style guides and code conventions
