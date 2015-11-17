@@ -4,6 +4,7 @@
 
 There are many perfect guides and tutorials how to write clear and well understandable code. Also our world has such outstanding tools to control clearness of JavaScript code as JSLint. Instead of reinventing the wheel I want to formulate some common principles and approaches, some unobvious improvements for writing clear, well readable, self-explained, efficient JavaScript code, certainly, from my point of view. The ideas expressed here can use for creating own detailed style guides and conventions inside developer teams. So...
 
+
 ### Identifiers
 
 Use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained. I've collected a list (look at it below) of the most common and frequent cases which may appear in a code. They have optimal balance between brevity and intelligibility. You shouldn't go to extremes and use one-letter or even one-symbol identifiers like "_", "$" (despite their validity) except counters in loops like "i", "j", "k" etc.
@@ -29,13 +30,16 @@ xhr       |XMLHttpRequest|
    is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of
    the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
 
+
 ### Loops and array iterations
 
 Use ECMAScript 5.1 methods (`forEach`, `map`, `reduce`, `reduceRight`, `filter`, `some`, `every`) for array loops instead traditional `for`/`while`/`do-while` when it is possible. There are several reasons to do so:
-  - *Chaining*. You can construct chains of methods if you need depending on result they return. Sometimes it's very useful.
-  - *Uniform syntax*. Every method from the list above takes in a function which is invoked on every element of an array and optional second argument which means the `this` value inside. Additionally, function/callback in every method except `reduce`/`reduceRight` takes fixed number of obvious parameters what simplifies debugging process and code understanding.
+  - *Chaining*. You can construct chains of methods if you need, depending on result they return. Sometimes it's very useful.
+  - *Uniform syntax*. Every method from the list above takes in a function which is invoked on every element of an array and optional second argument which means the `this` value inside. Additionally, function/callback in each method except `reduce`/`reduceRight` takes fixed number (3) of obvious parameters what simplifies debugging process and code understanding.
+  For details: [MDN: Array iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
   - *Predefined counter*. For most cases we only want to get access to each element one-by-one. When we use these methods there is no need in additional variables, increment operations, conditions for running the loop. So we get cleaner code and avoid variable clashes or memory overhead.
-  
+
+
 ### Comments and documentation
 
 Use JSDoc syntax for consistent comments.
