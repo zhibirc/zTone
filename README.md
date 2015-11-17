@@ -32,6 +32,7 @@ xhr       |XMLHttpRequest|
    the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
 - Variables which are designed to be private but not realize real privacy might be prepended with an underbar (`_`). But I think much more better is implement real private access members with closures and indicate this fact with `_` as prefix.
 - Use **is**/**has**/**can**/**should**/**compute**/**init**/**find**/**count**/**num** and so on as parts (usually, prefixes) of variable/property names, depending on their meaning.
+- Avoid magic numbers in code, it's the common rule. There are some rare cases which are determined by concrete context when it can be suitable, but, in general, it's a bad practice.
 
 
 ### Loops and array iterations
