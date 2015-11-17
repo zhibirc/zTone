@@ -6,7 +6,6 @@ There are many perfect guides and tutorials how to write clear and well understa
 
 
 ### Identifiers
-
 Use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained. I've collected a list (look at it below) of the most common and frequent cases which may appear in a code. They have optimal balance between brevity and intelligibility. You shouldn't go to extremes and use one-letter or even one-symbol identifiers like "_", "$" (despite their validity) except counters in loops like "i", "j", "k" etc.
 
 SHORTHAND |FULL          |
@@ -32,16 +31,17 @@ xhr       |XMLHttpRequest|
 
 
 ### Loops and array iterations
-
-Use ECMAScript 5.1 methods (`forEach`, `map`, `reduce`, `reduceRight`, `filter`, `some`, `every`) for array loops instead traditional `for`/`while`/`do-while` when it is possible. There are several reasons to do so:
+Use ECMAScript 5.1 methods (`forEach`, `map`, `reduce`, `reduceRight`, `filter`, `some`, `every`) for array loops instead traditional `for`/`while`/`do...while` when it is possible. There are several reasons to do so:
   - *Chaining*. You can construct chains of methods if you need, depending on result they return. Sometimes it's very useful.
-  - *Uniform syntax*. Every method from the list above takes in a function which is invoked on every element of an array and optional second argument which means the `this` value inside. Additionally, function/callback in each method except `reduce`/`reduceRight` takes fixed number (3) of obvious parameters what simplifies debugging process and code understanding.
+  - *Uniform syntax*. Every method from the list above takes in a function which is invoked on every element of an array and optional second argument which means the `this` value inside. Additionally, function/callback in each method except `reduce`/`reduceRight` takes fixed number of obvious parameters what simplifies debugging process and code understanding.
   For details: [MDN: Array iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
   - *Predefined counter*. For most cases we only want to get access to each element one-by-one. When we use these methods there is no need in additional variables, increment operations, conditions for running the loop. So we get cleaner code and avoid variable clashes or memory overhead.
+  - *Methods, not only loops*. It means that you can create such useful constructions as `Object.keys(obj).forEach(callback[, thisArg])`. By the way, this pattern is a good alternative to `for...in` loop with inner check for own properties.
+  - *New scope*. These methods incapsulate the traversing work inside themselves, so you don't pollute the external/global scope.
+  - *Performance*. Nowadays they fast enough and have a comparable speed as traditional loops (e.g. [jsPerf: for vs forEach](https://jsperf.com/for-vs-foreach/37)).
 
 
 ### Comments and documentation
-
 Use JSDoc syntax for consistent comments.
 
 ## Various style guides and code conventions
