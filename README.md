@@ -12,6 +12,7 @@ There are many perfect guides and tutorials how to write clear and well understa
 
 SHORTHAND |FULL          |
 ----------|--------------|
+cb        |callback      |
 ch, char  |character     |
 ctx       |context       |
 el, elem  |element       |
