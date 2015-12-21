@@ -10,24 +10,26 @@ There are many perfect guides and tutorials how to write clear and well understa
 
 - Use well known acronyms and shorthands to make naming of auxiliary identifiers in your code (e.g. function parameters, counters etc.) more consistent and self-explained. I've collected a list (look at it below) of the most common and frequent cases which may appear in a code. They have optimal balance between brevity and intelligibility. You shouldn't go to extremes and use one-letter or even one-symbol identifiers like `_`, `$` (despite their validity) except counters in loops like `i`, `j`, `k` etc.
 
-SHORTHAND |FULL          |
-----------|--------------|
-cb        |callback      |
-ch, char  |character     |
-ctx       |context       |
-el, elem  |element       |
-evt`*`    |event         |
-ex        |exception     |
-expr      |expression    |
-fn, func  |function      |
-idx       |index         |
-init      |initial       |
-pts       |points        |
-pos       |position      |
-res       |result        |
-ret       |return        |
-str       |string        |
-xhr       |XMLHttpRequest|
+SHORTHAND |FULL              |
+----------|------------------|
+cb        |callback          |
+ch, char  |character         |
+ctx       |context           |
+el, elem  |element           |
+evt`*`    |event             |
+ex        |exception         |
+expr      |expression        |
+fn, func  |function          |
+idx       |index             |
+init      |initial           |
+pts       |points            |
+pos       |position          |
+re        |regular expression|
+res       |result            |
+ret       |return            |
+str       |string            |
+txt       |text              |
+xhr       |XMLHttpRequest    |
 `*`**evt** because **e** or **event** are not appropriate for this purpose. **e** could mean the mathematical constant and, generally,
    is too ambiguous and overall. On the other hand, **event** isn't suitable because in event model of old IE browser creates a property of
    the global object with this name `window.event` when some event occurs. So, if you're dealing with IE you should keep this fact in mind.
