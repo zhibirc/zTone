@@ -52,6 +52,26 @@ For details see [MDN: Array iteration methods](https://developer.mozilla.org/en-
 - *Performance*. Nowadays they fast enough and have a comparable speed as traditional loops (e.g. [jsPerf: for vs forEach](https://jsperf.com/for-vs-foreach/37)).
 
 
+### Equality operators
+
+There are two equality operators in JavaScript: `==` (Abstract Equality Comparison/equality/type–converting comparison/"double equals") and `===` (Strict Equality Comparison/identity/strict equality/"triple equals"). There is also `Object.is` (new in ECMAScript 2015), but I'd like to focus on the first two. I recommend always use `===` (Strict Equality Comparison) for all your and your team code instead of `==` unless you really want this behavior. Sometimes speak about the following case as an exception from this rule. Assume we want to do something if and only if our variable `k` stores something besides `null` and `undefined`. Using `==` (whose complement is `!=`) we can write verification in short `k != null`. Otherwise we should write `k !== null && k !== undefined`, for example.
+
+In addition, using `==` rather than `===` is less performant in general, because as described in original algorithm in ECMAScript specification, there is fallback to `===` algorithm from `==` one if types become the same. And the most time of working `==` algorithm tries to convert types to the same values (if they were different), then starts from the beginning. So, potentially, "non-strict" algorithm can make several cicles through its steps before invoke `===` comparison.
+
+Also there is a risk of undesired behavior if `valueOf` was redefined to something that can break our code, for example:
+```javascript
+Object.prototype.valueOf = function () {
+	while(1);
+};
+```
+Additionally, the built-in numeric coercion on arrays (abstract operation `ToPrimitive`) will fail with a stack overflow error if your array is deeply nested enough. (See [JavaScript in Ten Minutes](https://github.com/spencertipping/js-in-ten-minutes))
+
+Thus, for better readability, for avoiding unexpected behavior and mistakes, security holes and loss to performance, use `===` (Strict Equality Comparison).
+
+
+### Performance
+
+
 ### Comments and documentation
 
 - Tricky code should not be commented but rewritten! (“Code Complete”, Steven C. McConnell — Microsoft Press)
