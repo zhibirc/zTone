@@ -75,6 +75,7 @@ Thus, for better readability, for avoiding unexpected behavior and mistakes, sec
 
 Performance should be one of the most important basic principles. Software becomes more complex, technical requirements grow, user interfaces can contain various complex logic, but application of Moore's law in the future is questionable. In truth, all users probably will be happy to deal with more fast web apps and web interfaces in general. So:
 - Cache your data, reuse computation results which you've already obtained. It's significantly more imporant with APIs such DOM.
+
 ###### What can be cached?
 - `length` property of array/collection being iterated
 - selected DOM elements, especially when calling highly nested DOM objects
