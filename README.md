@@ -1,3 +1,4 @@
+![JS Logo](js.png)
 # zTone
 
 *Recipes for cooking JavaScript*
@@ -76,7 +77,7 @@ Performance should be one of the most important basic principles. Software becom
 - Cache your data, reuse computation results which you've already obtained. It's significantly more imporant with APIs such DOM.
 ###### What can be cached?
 - `length` property of array/collection being iterated
-- selected DOM elements
+- selected DOM elements, especially when calling highly nested DOM objects
 ```javascript
 let divs = document.getElementsByTagName('div');
 ```
@@ -85,6 +86,7 @@ let divs = document.getElementsByTagName('div');
 ```javascript
 let fetch = document.getElementById.bind(document);
 ```
+- template’s raw text and/or pre-compiled version of the template (if you’re using HTML templates)
 
 
 ### Comments and documentation
