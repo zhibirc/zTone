@@ -96,6 +96,26 @@ let fetch = document.getElementById.bind(document);
 - Use JSDoc syntax for consistency of comments.
 
 
+### Performance cookbook
+
+
+### Miscellaneous
+
+- Imagine you have a function with the following signature:
+```javascript
+function func(param_0, param_1, param_2) {}
+```
+If for some reason you don't pass one or more arguments (don't fill one or more parameters) on invocation of corresponding 
+function, I recommend to pass entity which means **nothing** in JavaScript instead. And this entity is `null`. So when you don't 
+want to pass the enough number of arguments, it's better to invoke `func` as, for example:
+```javascript
+func(value, null, null);
+```
+It's a good choice especially when there are many lines of code between function declaration and invocation (or even they are used 
+in different files/modules), because you have a simple reminder of actual function behaviour and this approach helps to obtain 
+self-documented code. From my point of view, this is some kind of discipline for coding style.
+
+
 ## Various style guides and code conventions
 
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript#airbnb-javascript-style-guide-)
@@ -106,6 +126,7 @@ let fetch = document.getElementById.bind(document);
 - [Node.js Style Guide](https://github.com/felixge/node-style-guide#nodejs-style-guide)
 - [WordPress JavaScript Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/)
 - [npm-coding-style](https://docs.npmjs.com/misc/coding-style)
+- [jscs JavaScript Code Style](https://github.com/DarkPark/jscs)
 
 
 ## Versions
