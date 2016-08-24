@@ -127,6 +127,7 @@ self-documented code. From my point of view, this is some kind of discipline for
 
 - Avoid interfering with a user's code where possible. For example, in _memoization_ pattern there are possibilities to use 
 cache outside of the returned function or add custom properties directly to the function to be memoized. First approach is better.
+Also adding memoization functionality to `Function.prototype` seems a god idea.
 
 
 ## Various style guides and code conventions
