@@ -61,11 +61,13 @@ There are two equality operators in JavaScript: `==` (Abstract Equality Comparis
 In addition, using `==` rather than `===` is less performant in general, because as described in original algorithm in ECMAScript specification, there is fallback to `===` algorithm from `==` one if types become the same. And the most time of working `==` algorithm tries to convert types to the same values (if they were different), then starts from the beginning. So, potentially, "non-strict" algorithm can make several cicles through its steps before invoke `===` comparison.
 
 Also there is a risk of undesired behavior if `valueOf` was redefined to something that can break our code, for example:
+
 ```javascript
 Object.prototype.valueOf = () => {
 	while(1);
 };
 ```
+
 Additionally, the built-in numeric coercion on arrays (abstract operation `ToPrimitive`) will fail with a stack overflow error if your array is deeply nested enough. (See [JavaScript in Ten Minutes](https://github.com/spencertipping/js-in-ten-minutes))
 
 Thus, for better readability, for avoiding unexpected behavior and mistakes, security holes and loss to performance, use `===` (Strict Equality Comparison).
@@ -79,14 +81,18 @@ Performance should be one of the most important basic principles. Software becom
 ###### What can be cached?
 - `length` property of array/collection being iterated
 - selected DOM elements, especially when calling highly nested DOM objects
+
 ```javascript
 let divs = document.getElementsByTagName('div');
 ```
+
 - the generated markup or DOM elements before inserting in DOM tree
 - object methods (but remember about function aliasing, which is assigning a method to a variable, to avoid losing `this`)
+
 ```javascript
 let fetch = document.getElementById.bind(document);
 ```
+
 - template’s raw text and/or pre-compiled version of the template (if you’re using HTML templates)
 
 
@@ -102,18 +108,25 @@ let fetch = document.getElementById.bind(document);
 ### Miscellaneous
 
 - Imagine you have a function with the following signature:
+
 ```javascript
 function func(param_0, param_1, param_2) {}
 ```
+
 If for some reason you don't pass one or more arguments (don't fill one or more parameters) on invocation of corresponding 
 function, I recommend to pass entity which means **nothing** in JavaScript instead. And this entity is `null`. So when you don't 
 want to pass the enough number of arguments, it's better to invoke `func` as, for example:
+
 ```javascript
 func(value, null, null);
 ```
+
 It's a good choice especially when there are many lines of code between function declaration and invocation (or even they are used 
 in different files/modules), because you have a simple reminder of actual function behaviour and this approach helps to obtain 
 self-documented code. From my point of view, this is some kind of discipline for coding style.
+
+- Avoid interfering with a user's code where possible. For example, in _memoization_ pattern there are possibilities to use 
+cache outside of the returned function or add custom properties directly to the function to be memoized. First approach is better.
 
 
 ## Various style guides and code conventions
