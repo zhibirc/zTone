@@ -8,4 +8,10 @@ It's not absolutely wrong in all its propositions or statements, but in most it 
 
 ---
 
+### Readability
 
+### Efficiency
+
+### Modularity
+
+### Safety
